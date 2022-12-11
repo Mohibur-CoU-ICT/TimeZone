@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
+import { NumberToWordComponent } from './number-to-word/number-to-word.component';
+import { TimeComponent } from './time/time.component';
 
-const routes: Routes = [];
+const routes: Route[] = [
+  {
+    path: 'time',
+    component: TimeComponent
+  },
+  {
+    path: 'number-to-word',
+    component: NumberToWordComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'time',
+    pathMatch: 'full'
+  },
+];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
