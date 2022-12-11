@@ -1,25 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <div>
-        <h1 style="font-weight: 1000">Your time is exact!</h1>
-        <p style="font-size: 20px;">Time in {{ cityName }}, {{ countryName }} now:</p>
-      </div>
-
-      <div class="text-center">
-        <h1 class="local-time">{{ localTimeFormat }}</h1>
-        <h2>{{ localTimeFormat2 }}</h2>
-      </div>
-
-      <div class="d-flex">
-        <div
-          class="shadow bg-body rounded time-card"
-          *ngFor="let timeZone of timeZones; let i = index"
-        >
-          <div class="zone-name">{{ timeZone.name }}</div>
-          <div class="zone-time">{{ timeZone.time }}</div>
-        </div>
-      </div>
-    </div>
+    <ul class="nav flex-row nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/time" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Time</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/number-to-word" routerLinkActive="active">Number To Word</a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
   </div>
 </div>
