@@ -1,0 +1,25 @@
+<div class="mt-3">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      oninput="validity.valid || (value = '');"
+      placeholder="Enter a number"
+      [(ngModel)]="inputNumber"
+    />
+    <!-- pattern="\d+" -->
+    <!-- pattern="[1-9][0-9]*" -->
+    <!-- pattern="^[1-9]\d*(\.\d+)?$" -->
+    <!-- pattern="/^(0|[1-9]\d*)?(\.\d+)?(?<=\d)$/" -->
+    <!-- onkeypress="return (event.charCode != 8 && event.charCode == 0 || (event.charCode >= 48 && event.charCode <= 57));"  -->
+    <!-- oninput="validity.valid||(value='');" -->
+    <!-- pattern="^[1-9][0-9]*$"
+    oninput="if(!this.value.match('^[1-9][0-9]*$')) this.value='';" -->
+    <button class="btn btn-secondary mt-3" (click)="convertToWordClicked()">
+      Convert to word
+    </button>
+  </div>
+  <div class="mt-5">
+    <h1 class="text-center">{{ numberInWord }}</h1>
+  </div>
+</div>
